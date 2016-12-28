@@ -1,4 +1,4 @@
-// ==UserScript==
+// ==OpenUserJS==
 // @name         BMO Investorline Infinite Session
 // @namespace    https://openuserjs.org/scripts/
 // @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
@@ -15,7 +15,7 @@
 // @grant        none
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js
 // @require      https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.4.7/bluebird.min.js
-// ==/UserScript==
+// ==/OpenUserJS==
 
 /* BMO InvestorLine by default has a 15 minute session timeout for standard accounts.
 
