@@ -23,7 +23,7 @@
 
    This offers unlimited session time for no extra cost.
 
-   DISCLAIMER: BMO, BMO Bank of Montreal, Bank of Montreal, BMO InvestorLine and BMO Wealth Management are registered and unregistered trademarks of BMO Financial Group in Canada, the United States and/or other countries.
+   DISCLAIMER: BMO®, BMO Bank of Montreal®, Bank of Montreal®, BMO InvestorLine® and BMO Wealth Management® are registered and unregistered trademarks of BMO Financial Group in Canada, the United States and/or other countries.
 */
 
 (function() {
