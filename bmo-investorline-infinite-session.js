@@ -1,6 +1,8 @@
 // ==UserScript==
 // @name         BMO Investorline Infinite Session
-// @namespace    https://userscripts.org/scripts/show/
+// @namespace    https://openuserjs.org/scripts/
+// @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
+// @author       DaTechNinja
 // @version      1.0
 // @encoding     utf-8
 // @license      https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/LICENSE
@@ -9,8 +11,6 @@
 // @supportURL   https://github.com/DaTechNinja/bmo-investorline-infinite-session/issues
 // @updateURL    https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/bmo-investorline-infinite-session.js
 // @downloadURL  https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/bmo-investorline-infinite-session.js
-// @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
-// @author       DaTechNinja
 // @match        https://www.secure.bmoinvestorline.com/ILClientWeb/client/*
 // @grant        none
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js
@@ -23,7 +23,7 @@
 
    This offers unlimited session time for no extra cost.
 
-   DISCLAIMER: BMO®, BMO Bank of Montreal®, Bank of Montreal®, BMO InvestorLine® and BMO Wealth Management® are registered and unregistered trademarks of BMO Financial Group in Canada, the United States and/or other countries.
+   DISCLAIMER: BMO, BMO Bank of Montreal, Bank of Montreal, BMO InvestorLine and BMO Wealth Management are registered and unregistered trademarks of BMO Financial Group in Canada, the United States and/or other countries.
 */
 
 (function() {
