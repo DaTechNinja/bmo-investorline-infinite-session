@@ -3,7 +3,7 @@
 // @namespace    https://openuserjs.org/libs/DaTechNinja/bmo-investorline-infinite-session
 // @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
 // @author       DaTechNinja
-// @version      1.0
+// @version      1.0.1
 // @encoding     utf-8
 // @license      https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/LICENSE
 // @icon         https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/favicon.ico
