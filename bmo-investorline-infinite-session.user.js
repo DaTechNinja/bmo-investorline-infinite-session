@@ -3,7 +3,7 @@
 // @namespace    https://openuserjs.org/scripts/DaTechNinja/BMO_Investorline_Infinite_Session
 // @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
 // @author       DaTechNinja
-// @version      1.0.1
+// @version      1.0.2
 // @encoding     utf-8
 // @license      https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/LICENSE
 // @icon         https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/favicon.ico
@@ -20,8 +20,9 @@
 /* BMO InvestorLine by default has a 15 minute session timeout for standard accounts.
 
    "We offer timeout extension to clients with 5 Star Gold or Platinum status. Clients with Gold or Platinum status may increase the online session timeout settings to 30 or 60 minutes"
+       — BMO Investorline Support Team
 
-   This offers unlimited session time for no extra cost.
+   This user script offers unlimited session time for no extra cost.
 
    DISCLAIMER: BMO®, BMO Bank of Montreal®, Bank of Montreal®, BMO InvestorLine® and BMO Wealth Management® are registered and unregistered trademarks of BMO Financial Group in Canada, the United States and/or other countries.
 */
