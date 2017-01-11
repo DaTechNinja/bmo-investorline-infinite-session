@@ -1,16 +1,16 @@
 // ==UserScript==
 // @name         BMO Investorline Infinite Session
-// @namespace    https://openuserjs.org/scripts/DaTechNinja/BMO_Investorline_Infinite_Session
+// @namespace    https://openuserjs.org/libs/DaTechNinja/bmo-investorline-infinite-session
 // @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
 // @author       DaTechNinja
-// @version      1.0.2
+// @version      1.0.3
 // @encoding     utf-8
 // @license      https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/LICENSE
 // @icon         https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/favicon.ico
 // @homepage     https://github.com/DaTechNinja/bmo-investorline-infinite-session/
 // @supportURL   https://github.com/DaTechNinja/bmo-investorline-infinite-session/issues
-// @updateURL    https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/bmo-investorline-infinite-session.user.js
-// @downloadURL  https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/bmo-investorline-infinite-session.user.js
+// @updateURL    https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/bmo-investorline-infinite-session.js
+// @downloadURL  https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/bmo-investorline-infinite-session.js
 // @match        https://www.secure.bmoinvestorline.com/ILClientWeb/client/*
 // @grant        none
 // @require      https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js
@@ -20,18 +20,19 @@
 /* BMO InvestorLine by default has a 15 minute session timeout for standard accounts.
 
    "We offer timeout extension to clients with 5 Star Gold or Platinum status. Clients with Gold or Platinum status may increase the online session timeout settings to 30 or 60 minutes"
-       — BMO Investorline Support Team
 
-   This user script offers unlimited session time for no extra cost.
+   This offers unlimited session time for no extra cost.
 
    DISCLAIMER: BMO®, BMO Bank of Montreal®, Bank of Montreal®, BMO InvestorLine® and BMO Wealth Management® are registered and unregistered trademarks of BMO Financial Group in Canada, the United States and/or other countries.
 */
 
-(function() {
-    'use strict';
+(function ($, undefined) {
+  $(function () {
+     'use strict';
 
     $(document).ready(function() {
         function getRandomInt(min, max) {
+            console.log("Generating random number");
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
@@ -49,12 +50,12 @@
 
         // Refresh our session randomly between 30 seconds to 3 minutes to keep session active
         function sessionLoop() {
-            var sleepInterval = getRandomInt(30000, 180000);
+            var sleepInterval = getRandomInt(30000, 300000);
 
             return Promise.delay(sleepInterval).then(function() {
                 // Load the home page to prevent server side expiration
                 navigationForm.find('input[name="method"]').val('displayHome');
-
+                navigationForm.find('input[name="_ILPageToken"]').val('');
                 $.post('https://www.secure.bmoinvestorline.com/ILClientWeb/client/home.do', navigationForm.serializeArray(), function(data, status) {});
 
                 // Reset local web storage expiration times to prevent client side expiration
@@ -65,10 +66,13 @@
                 for (var i in localStorage) {
                     var storageData = JSON.parse(localStorage[i]);
 
-                    if (storageData.val.match(localStorageRegex)) {
-                        storageData.exp = localStorageTimestamp2;
-                    } else {
-                        storageData.exp = localStorageTimestamp1;
+                    if (typeof storageData === 'object') {
+                        if (typeof storageData.val !== 'undefined') {
+                            if (storageData.val.match(localStorageRegex)) {
+                                storageData.exp = localStorageTimestamp2;
+                            } else {
+                                storageData.exp = localStorageTimestamp1;}
+                        }
                     }
 
                     localStorage.setItem(i, JSON.stringify(storageData));
@@ -80,4 +84,5 @@
 
         sessionLoop();
     });
-})();
+  });
+})(window.jQuery.noConflict(true));
