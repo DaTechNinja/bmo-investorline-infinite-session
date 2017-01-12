@@ -3,7 +3,7 @@
 // @namespace    https://openuserjs.org/scripts/DaTechNinja/BMO_Investorline_Infinite_Session
 // @description  Disables 15 minute session inactivity logout on BMO InvestorLine. Stay logged in as long as you want!
 // @author       DaTechNinja
-// @version      1.0.5
+// @version      1.0.6
 // @encoding     utf-8
 // @license      https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/LICENSE
 // @icon         https://raw.githubusercontent.com/DaTechNinja/bmo-investorline-infinite-session/master/favicon.ico
@@ -49,7 +49,7 @@
 
         // Refresh our session randomly between 30 seconds to 3 minutes to keep session active
         function sessionLoop() {
-            var sleepInterval = getRandomInt(30000, 300000);
+            var sleepInterval = getRandomInt(30000, 180000);
 
             return Promise.delay(sleepInterval).then(function() {
                 // Load the home page to prevent server side expiration
